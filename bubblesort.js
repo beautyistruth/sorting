@@ -1,5 +1,5 @@
 function bubbleSort (arr) {
-    console.log(`starting array == ${arr}`)
+
     let sorted = false;
 
     while (sorted === false) {

@@ -7,28 +7,29 @@ describe('Split Array function', function() {
       });
   });
 
-
-  /*
-describe('Bubble Sort', function(){
-    it('handles an empty array', function(){
-      expect(bubbleSort([]) ).toEqual( [] );
+  describe('Merge function', function(){
+    it('is able to merge two sorted arrays into one sorted array', function(){
+      expect(merge([3, 4], [1, 2])).toEqual([1, 2, 3, 4]);
     });
-    it('returns a sorted array', function(){
-        expect(bubbleSort([3, 4, 2, 1])).toEqual([1, 2, 3, 4]);
+    it('is able to merge two unsorted arrays into one sorted array', function(){
+      expect(merge([3], [2])).toEqual([2, 3]);
     });
-
-    it('does not use Array.prototype.sort', function() {
-      spyOn(Array.prototype, 'sort').and.callThrough();
-
-      let unsorted = [4,3,2,1];
-      let sorted = bubbleSort(unsorted);
-
-      expect(sorted).toEqual([1,2,3,4]);
-      expect(Array.prototype.sort.calls.count()).toBe(0);
+    it('is able to merge two sorted uneven arrays into one sorted array', function(){
+      expect(merge([3, 4], [1, 2, 5])).toEqual([1, 2, 3, 4, 5]);
     });
-    
   });
-  */
 
-
-
+  describe('mergeSort function', function(){
+    it('is able to merge two sorted arrays into one sorted array', function(){
+      expect(mergeSort([3, 4, 1, 2])).toEqual([1, 2, 3, 4]);
+    });
+    it('is able to merge two unsorted arrays into one sorted array', function(){
+      expect(mergeSort([3, 2, 0])).toEqual([0, 2, 3]);
+    });
+    it('is able to merge two sorted uneven arrays into one sorted array', function(){
+      expect(mergeSort([1, 1, 4, 2])).toEqual([1, 1, 2, 4]);
+    });
+    it('is able to merge two sorted uneven arrays into one sorted array', function(){
+        expect(mergeSort([])).toEqual([]);
+    });
+  });
